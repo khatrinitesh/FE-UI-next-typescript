@@ -1,11 +1,25 @@
 "use client";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../headerSection/HeaderSection";
 import FooterSection from "../footerSection/FooterSection";
 import { MainLayoutProps } from "@/interface";
 import ErrorBoundary from "@/app/ErrorBoundary";
+import PreloaderSection from "@/components/preloaderSection/PreloaderSection";
 
 const MainLayout = ({ children }: MainLayoutProps) => {
+  const [isLoading, setIsLoading] = useState<boolean>(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 0);
+    return () => clearTimeout(timer);
+  });
+
+  if (isLoading) {
+    return <PreloaderSection />;
+  }
+
   return (
     <>
       <ErrorBoundary>
