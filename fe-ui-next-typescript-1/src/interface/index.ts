@@ -137,3 +137,34 @@ export interface DeviceState {
   breakpoint: BreakpointKey;
   setWidth: (width: number) => void;
 }
+
+export interface TypewriterState {
+  currentPhraseIndex: number;
+  displayedText: string;
+  isDeleting: boolean;
+}
+export interface StringState {
+  original: string;
+  truncated: string;
+}
+
+export interface OverlayState {
+  imageUrl: string;
+  overlayText: string;
+}
+
+export interface BeamState {
+  position: { x: number; y: number };
+  target: { x: number; y: number };
+  isMoving: boolean;
+  setTargetPosition: (x: number, y: number) => void;
+  updateBeamPosition: () => void;
+}
+
+export interface TooltipData {
+  text: string;
+  visible: boolean;
+  position: { x: number; y: number };
+}
+export const TOOLTIP_DELAY = 200; // ms before showing
+export const TOOLTIP_OFFSET = 10; // px offset from target

@@ -1,8 +1,15 @@
+"use client";
 import AccordionSection from "@/components/accordionSection/AccordionSection";
 import ConcatItemList from "@/components/concatItemList/ConcatItemList";
 import HeadTitle from "@/components/headTitle/HeadTitle";
 import ItemList from "@/components/itemList/ItemList";
+import OverlayImageComponent from "@/components/overlayImageComponent/OverlayImageComponent";
 import ResponsiveNotice from "@/components/responsiveNotice/ResponsiveNotice";
+import TooltipComponent from "@/components/tooltipComponent/TooltipComponent";
+import TooltipTriggerComponent from "@/components/TooltipTriggerComponent/TooltipTriggerComponent";
+import TracingBeamComponent from "@/components/tracingBeamComponent/TracingBeamComponent";
+import TruncatedTextComponent from "@/components/truncatedTextComponent/TruncatedTextComponent";
+import TypewriterComponent from "@/components/typewriterComponent/TypewriterComponent";
 import UserRatingSection from "@/components/userRatingSection/UserRatingSection";
 import VerticalLine from "@/components/verticalLine/VerticalLine";
 import VerticalLineControlsSection from "@/components/verticalLineControlsSection/VerticalLineControlsSection";
@@ -12,18 +19,51 @@ import ZebraTableSection from "@/components/zebraTableSection/ZebraTableSection"
 import ZigZagSection from "@/components/ZigZagSection/ZigZagSection";
 import ZoomHoverSection from "@/components/zoomHoversection/ZoomHoverSection";
 import { zebraDataTable, ZIGZAGDATA } from "@/constants/constants";
+import { useOverlayStore } from "@/store/useOverlayStore/useOverlayStore";
 import React from "react";
 
 const HomePageSection = () => {
   const sum = (a: any, b: any) => {
     return a + b;
   };
+
+  const { setOverlayText } = useOverlayStore();
+
+  const handleChangeText = () => {
+    setOverlayText("New text overlay! You can change this dynamically.");
+  };
+
   const result = sum(1, 2);
+  const longText =
+    "This is a very long string that needs to be truncated with an ellipsis if it exceeds a certain length, especially for UI display.";
   return (
     <div className="container mx-auto">
       <HeadTitle>Home page</HeadTitle>
       {result}
-      <ResponsiveNotice />
+      <TooltipComponent /> {/* Tooltip floats globally */}
+      <div className="space-x-6 text-lg">
+        <TooltipTriggerComponent text="This is a tooltip!">
+          <button className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+            Hover Me
+          </button>
+        </TooltipTriggerComponent>
+
+        <TooltipTriggerComponent text="Another tooltip example.">
+          <span className="text-blue-600 underline cursor-help">
+            Hover Text
+          </span>
+        </TooltipTriggerComponent>
+      </div>
+      <TracingBeamComponent />1
+      <OverlayImageComponent />
+      <button
+        onClick={handleChangeText}
+        className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+      >
+        Change Text Overlay
+      </button>
+      <TruncatedTextComponent text={longText} />
+      <TypewriterComponent />
       <UserRatingSection />
       <VerticalLine />
       <VerticalLineControlsSection />

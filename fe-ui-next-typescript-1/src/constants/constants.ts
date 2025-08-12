@@ -72,3 +72,25 @@ export const DEVICE_BREAKPOINTS = {
 } as const;
 
 export type BreakpointKey = keyof typeof DEVICE_BREAKPOINTS;
+
+export const TYPING_SPEED = 100; // ms between characters
+export const PHRASES = [
+  "Hello, world!",
+  "Welcome to my portfolio.",
+  "Built with Next.js, TypeScript, Tailwind.",
+];
+
+export const TRUNCATE_LENGTH = 50; // Adjust as needed
+
+export const IMAGE_URL =
+  "https://via.placeholder.com/600x400.png?text=Your+Image"; // Example image
+export const MAX_TEXT_LENGTH = 100; // Max text length before truncation (if needed)
+
+export const BEAM_INITIAL_POSITION = { x: 0, y: 0 };
+export const BEAM_SIZE = { width: 4, height: 40 }; // Adjust for beam appearance
+export const BEAM_SPEED = 5; // Speed at which the beam moves (pixels per frame)
+export const SCREEN_WIDTH = 800; // Screen size for boundary
+export const SCREEN_HEIGHT = 600; // Screen size for boundary
+
+export const TOOLTIP_DELAY = 200; // ms before showing
+export const TOOLTIP_OFFSET = 10; // px offset from target
