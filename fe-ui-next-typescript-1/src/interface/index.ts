@@ -166,5 +166,22 @@ export interface TooltipData {
   visible: boolean;
   position: { x: number; y: number };
 }
-export const TOOLTIP_DELAY = 200; // ms before showing
-export const TOOLTIP_OFFSET = 10; // px offset from target
+
+export interface PostData {
+  userId: number;
+  id: number;
+  title: string;
+  body: string;
+}
+
+export interface PostsState {
+  posts: PostData[];
+  loading: boolean;
+  error: string | null;
+  fetchPosts: () => Promise<void>;
+}
+
+export interface ToggleState {
+  isOn: boolean;
+  toggle: () => void;
+}

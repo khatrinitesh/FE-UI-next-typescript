@@ -1,8 +1,10 @@
 "use client";
 import AccordionSection from "@/components/accordionSection/AccordionSection";
 import ConcatItemList from "@/components/concatItemList/ConcatItemList";
+import FetchPostsComponent from "@/components/fetchPostsComponent/FetchPostsComponent";
 import HeadTitle from "@/components/headTitle/HeadTitle";
 import ItemList from "@/components/itemList/ItemList";
+import NeumorphicToggleComponent from "@/components/neumorphicToggleComponent/NeumorphicToggleComponent";
 import OverlayImageComponent from "@/components/overlayImageComponent/OverlayImageComponent";
 import ResponsiveNotice from "@/components/responsiveNotice/ResponsiveNotice";
 import TooltipComponent from "@/components/tooltipComponent/TooltipComponent";
@@ -40,6 +42,8 @@ const HomePageSection = () => {
     <div className="container mx-auto">
       <HeadTitle>Home page</HeadTitle>
       {result}
+      <NeumorphicToggleComponent />
+      <FetchPostsComponent />
       <TooltipComponent /> {/* Tooltip floats globally */}
       <div className="space-x-6 text-lg">
         <TooltipTriggerComponent text="This is a tooltip!">

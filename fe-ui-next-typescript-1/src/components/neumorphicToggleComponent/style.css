@@ -1,0 +1,45 @@
+.neumorphic-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  font-family: sans-serif;
+}
+
+.toggle-label {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #444;
+}
+
+.neumorphic-toggle {
+  width: 70px;
+  height: 35px;
+  border-radius: 50px;
+  background: #e0e0e0;
+  box-shadow: 8px 8px 16px #bebebe, -8px -8px 16px #ffffff;
+  position: relative;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.toggle-ball {
+  width: 30px;
+  height: 30px;
+  background: #d1d1d1;
+  border-radius: 50%;
+  position: absolute;
+  top: 2.5px;
+  left: 5px;
+  transition: left 0.3s ease, background 0.3s ease;
+  box-shadow: 4px 4px 8px #bebebe, -4px -4px 8px #ffffff;
+}
+
+.neumorphic-toggle.on {
+  background: #c1f0c1;
+}
+
+.neumorphic-toggle.on .toggle-ball {
+  left: 35px;
+  background: #a0e0a0;
+}

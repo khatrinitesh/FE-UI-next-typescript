@@ -94,3 +94,10 @@ export const SCREEN_HEIGHT = 600; // Screen size for boundary
 
 export const TOOLTIP_DELAY = 200; // ms before showing
 export const TOOLTIP_OFFSET = 10; // px offset from target
+
+export const POSTS_API_URL = "https://jsonplaceholder.typicode.com/posts";
+
+export const TOGGLE_LABELS = {
+  ON: "TURN ON",
+  OFF: "TURN OFF",
+} as const;
